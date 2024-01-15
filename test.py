@@ -48,11 +48,11 @@ def create_chain(system_prompt):
     llm = LlamaCpp(
             model_path=model_path,
             temperature=0,
-            max_tokens=512,
+            max_tokens=2048,
             top_p=1,
             # callback_manager=callback_manager,
             # n_gpu_layers=1,
-            # n_batch=512,
+            # n_batch=2048,
             # n_ctx=int(os.environ['MODEL_CONTEXT_SIZE'])),
             stop=["[INST]"],
             verbose=False,
