@@ -53,7 +53,7 @@ def create_chain(system_prompt):
             # callback_manager=callback_manager,
             n_gpu_layers=1,
             n_batch=512,
-            n_ctx=int(os.environ['MODEL_CONTEXT_SIZE']),
+            n_ctx=2048,
             stop=["[INST]"],
             verbose=False,
             streaming=True,
