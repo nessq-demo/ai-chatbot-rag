@@ -4,6 +4,8 @@ from langchain.prompts import PromptTemplate
 # from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.base import BaseCallbackHandler
 from huggingface_hub import hf_hub_download
+import os
+import sys
 
 
 # StreamHandler to intercept streaming output from the LLM.
@@ -51,7 +53,7 @@ def create_chain(system_prompt):
             # callback_manager=callback_manager,
             # n_gpu_layers=1,
             # n_batch=512,
-            # n_ctx=32000,
+            # n_ctx=int(os.environ['MODEL_CONTEXT_SIZE'])),
             stop=["[INST]"],
             verbose=False,
             streaming=True,
